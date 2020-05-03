@@ -1,0 +1,13 @@
+{
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+
+  "team.showWelcomeMessage": false,
+  "editor.formatOnSave": true,
+  "python.linting.pycodestyleEnabled": false,
+  // "python.linting.pylintPath": "/venv",
+  "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+  "[python]": {
+    "editor.formatOnSave": true
+  }
+}
