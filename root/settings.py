@@ -25,7 +25,7 @@ SECRET_KEY = '+rj&4o4re)g)u=30_!4e@vk=$to=o#(2g@gf^d-3(ion4ge&9@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", 'rail-transport.herokuapp.com']
 
 
 # Application definition
