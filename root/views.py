@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import authenticate, login as log, logout as out
 
 
-@login_required(login_url='login/')
+# @login_required(login_url='login/')
 def index(request):
     return render(request, 'index.html')
 
