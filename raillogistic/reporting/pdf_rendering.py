@@ -6,7 +6,7 @@ from raillogistic.reporting.utils import render_to_pdf
 import json
 from django.conf import settings
 import os
-from Transport.settings import BASE_DIR
+from root.settings import BASE_DIR
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from weasyprint import HTML, CSS
