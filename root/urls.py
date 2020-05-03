@@ -21,6 +21,7 @@ from .schema import schema
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.mixins import LoginRequiredMixin
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 class PrivateGraphQLView(LoginRequiredMixin, GraphQLView):
@@ -34,4 +35,4 @@ urlpatterns = [
     url('^graphiql', csrf_exempt(PrivateGraphQLView.as_view(
         graphiql=True, schema=schema))),
     url(r'^(?:.*)/?$', views.index),
-]
+] + staticfiles_urlpatterns()
