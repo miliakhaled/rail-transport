@@ -35,4 +35,6 @@ urlpatterns = [
     url('^graphiql', csrf_exempt(PrivateGraphQLView.as_view(
         graphiql=True, schema=schema))),
     url(r'^(?:.*)/?$', views.index),
-] + staticfiles_urlpatterns()
+    # path('', views.index),
+]
+# urlpatterns += staticfiles_urlpatterns()

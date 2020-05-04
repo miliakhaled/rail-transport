@@ -1,22 +1,29 @@
 {% load static %}
 <!DOCTYPE html>
+<base href="/" />
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    {% comment %} <link rel="icon" href="{% static '/favicon.ico'%}" /> {% endcomment %}
+    {% comment %}
+    <link rel="icon" href="{% static '/favicon.ico'%}" />
+    {% endcomment %}
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="/logo192.png" />
+
     <link rel="manifest" href="{% static '/manifest.json' %}" />
     <title>React App</title>
-    <link href="{% static '/static/css/2.8d06fd47.chunk.css'%}" rel="stylesheet" />
     <link
-      href="{% static '/static/css/main.84a1f818.chunk.css'%}"
       rel="stylesheet"
+      href="{% static 'static/css/2.8d06fd47.chunk.css'%}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'static/css/main.84a1f818.chunk.css'%}"
     />
   </head>
   <body>
@@ -113,7 +120,13 @@
         t();
       })([]);
     </script>
-    <script src="{% static '/static/js/2.d5885065.chunk.js' %}"></script>
-    <script src="{% static '/static/js/main.2ae81197.chunk.js' %}"></script>
+    <script
+      type="text/javascript"
+      src='{% static "/static/js/2.d5885065.chunk.js" %}'
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static "/static/js/main.2ae81197.chunk.js" %}"
+    ></script>
   </body>
 </html>
