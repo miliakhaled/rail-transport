@@ -1,0 +1,86 @@
+[
+  {
+    "model": "barem.UnitType",
+    "pk": 1,
+    "fields": {
+      "designation": "ATTACHEMENT"
+    }
+  },
+  {
+    "model": "barem.UnitType",
+    "pk": 2,
+    "fields": {
+      "designation": "CLASSIC"
+    }
+  },
+  {
+    "model": "barem.Unit",
+    "pk": 1,
+    "fields": {
+      "designation": "JOUR",
+      "unit_type": 2
+    }
+  },
+  {
+    "model": "barem.Unit",
+    "pk": 2,
+    "fields": {
+      "designation": "NUIT",
+      "unit_type": 2
+    }
+  },
+  {
+    "model": "barem.Unit",
+    "pk": 3,
+    "fields": {
+      "designation": "MOIS",
+      "unit_type": 2
+    }
+  },
+  {
+    "model": "barem.Unit",
+    "pk": 4,
+    "fields": {
+      "designation": "SHIFT JOUR",
+      "unit_type": 1
+    }
+  },
+  {
+    "model": "barem.Unit",
+    "pk": 5,
+    "fields": {
+      "designation": "SHIFT NUIT",
+      "unit_type": 1
+    }
+  },
+  {
+    "model": "barem.Unit",
+    "pk": 6,
+    "fields": {
+      "designation": "SHIFT SUPPLEMENTAIRE",
+      "unit_type": 1
+    }
+  },
+  {
+    "model": "facturation.TVA",
+    "pk": 1,
+    "fields": {
+      "designation": "19 %",
+      "value": 19
+    }
+  },
+  {
+    "model": "park.EngineType",
+    "pk": 1,
+    "fields": {
+      "designation": "Chariot"
+    }
+  },
+  {
+    "model": "park.EngineType",
+    "pk": 2,
+    "fields": {
+      "designation": "Grue"
+    }
+  }
+]
