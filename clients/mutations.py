@@ -1,5 +1,5 @@
 from . import serializers
-from custom.graphene import CustomDjangoSerializerMutation
+from raillogistic.graphene.graphene import CustomDjangoSerializerMutation
 from graphene_django_cud.mutations import DjangoCreateMutation, DjangoBatchCreateMutation, DjangoUpdateMutation, DjangoPatchMutation
 from . import models
 

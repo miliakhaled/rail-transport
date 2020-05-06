@@ -1,10 +1,11 @@
-from custom.graphene import CustomDjangoObjectType, CustomDjangoSerializerMutation, CustomConnection
+from raillogistic.graphene.graphene import CustomDjangoObjectType, CustomDjangoSerializerMutation, CustomConnection
 import graphene
 from graphene_django.filter import DjangoFilterConnectionField
 from graphene.relay.node import Node
 from . import models
-from graphene_django_extras import DjangoListObjectType, DjangoListObjectField, DjangoObjectField,  DjangoFilterPaginateListField,  LimitOffsetGraphqlPagination
+from graphene_django_extras import DjangoListObjectField, DjangoObjectField,  DjangoFilterPaginateListField,  LimitOffsetGraphqlPagination
 from rest_framework import serializers
+from raillogistic.graphene.CustomDjangoObjectListType import CustomDjangoListObjectType
 
 
 class ClientType(CustomDjangoObjectType):
@@ -15,7 +16,7 @@ class ClientType(CustomDjangoObjectType):
             'id': ("exact",),
             'raison_social': ("exact", 'icontains'),
             'code_client': ("exact", 'icontains'),
-            'barem': ("exact",),
+            # 'barem': ("exact",),
         }
 
 
@@ -40,7 +41,7 @@ class ContactType(CustomDjangoObjectType):
 # 		filter_fields = '__all__'
 
 
-class ClientListType(DjangoListObjectType):
+class ClientListType(CustomDjangoListObjectType):
     class Meta:
         name = 'ClientListType'
         model = models.Client
@@ -48,13 +49,13 @@ class ClientListType(DjangoListObjectType):
             'id': ("exact",),
             'raison_social': ("exact", 'icontains'),
             'code_client': ("exact", 'icontains'),
-            'barem': ("exact",),
+            # 'barem': ("exact",),
 
         }
         pagination = LimitOffsetGraphqlPagination()
 
 
-class ContactListType(DjangoListObjectType):
+class ContactListType(CustomDjangoListObjectType):
     class Meta:
         name = 'ContactListType'
         model = models.Contact
