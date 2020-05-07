@@ -1,197 +1,275 @@
 {% load static %}
 <style>
-    @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+  @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-    .login-page {
-        width: 100%;
-        padding: 8% 0 0;
-        margin: auto;
-    }
+  .login-page {
+    width: 100%;
+    padding: 8% 0 0;
+    margin: auto;
+  }
 
-    .form {
-        height: 450px;
-        position: relative;
-        z-index: 1;
-        background: white;
-        width: 600px;
-        padding: 40px 45px;
-        margin-top: 200px;
-        margin-bottom: auto;
-        text-align: center;
-        /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
+  .form {
+    height: 450px;
+    position: relative;
+    z-index: 1;
+    background: rgba(100, 100, 100, 0.0);
+    width: 500px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
+  }
 
-    }
+  .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    z-index: 2;
+  }
 
-    .form input {
-        font-family: "Roboto", sans-serif;
-        outline: 0;
-        background: #f2f2f2;
-        width: 100%;
-        border: 0;
-        margin: 0 0 15px;
-        padding: 15px;
-        box-sizing: border-box;
-        font-size: 14px;
-        z-index: 2;
-    }
+  .form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #c56c61;
+    width: 100%;
+    font-weight: bolder;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin-top: 20px;
+  }
 
-    .form button {
-        font-family: "Roboto", sans-serif;
-        text-transform: uppercase;
-        outline: 0;
-        background-color: cornflowerblue;
-        width: 100%;
-        font-weight: bolder;
-        border: 0;
-        padding: 15px;
-        color: #FFFFFF;
-        font-size: 14px;
-        -webkit-transition: all 0.3 ease;
-        transition: all 0.3 ease;
-        cursor: pointer;
-        margin-top: 20px
-    }
+  .form button:hover,
+  .form button:active,
+  .form button:focus {
+    background: #43a047;
+  }
 
-    .form button:hover,
-    .form button:active,
-    .form button:focus {
-        background: #43A047;
+  .form .message {
+    margin: 15px 0 0;
+    color: gray;
+    font-size: 12px;
+    margin: 30px 0;
+  }
 
-    }
+  .form .message a {
+    color: cornflowerblue;
+    text-decoration: none;
+  }
 
-    .form .message {
-        margin: 15px 0 0;
-        color: #a3a3a3;
-        font-size: 12px;
-        margin: 30px 0;
-    }
+  .form .register-form {
+    display: none;
+  }
 
-    .form .message a {
-        color: cornflowerblue;
-        text-decoration: none;
-    }
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 
-    .form .register-form {
-        display: none;
-    }
+  .container:before,
+  .container:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 
-    .container {
-        position: relative;
-        z-index: 1;
-        max-width: 300px;
-        margin: 0 auto;
-    }
+  .container .info {
+    margin: 50px auto;
+    text-align: center;
+  }
 
-    .container:before,
-    .container:after {
-        content: "";
-        display: block;
-        clear: both;
-    }
+  .container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+  }
 
-    .container .info {
-        margin: 50px auto;
-        text-align: center;
-    }
+  .container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
+  }
 
-    .container .info h1 {
-        margin: 0 0 15px;
-        padding: 0;
-        font-size: 36px;
-        font-weight: 300;
-        color: #1a1a1a;
-    }
+  .container .info span a {
+    color: #000000;
+    text-decoration: none;
+  }
 
-    .container .info span {
-        color: #4d4d4d;
-        font-size: 12px;
-    }
+  .container .info span .fa {
+    color: #ef3b3a;
+  }
 
-    .container .info span a {
-        color: #000000;
-        text-decoration: none;
-    }
+  html {
+    height: 100%;
+    margin: 0px;
+  }
 
-    .container .info span .fa {
-        color: #EF3B3A;
-    }
+  body {
+    /* background-image: url("http://rail-logistic.dz/static/media/back12.07f2ecee.png"); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen;
+    /* fallback for old browsers */
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+  }
 
-    html {
-        height: 100%;
-        margin: 0px;
-    }
+ 
 
-    body {
+  .logo {
+    margin-bottom: 20px;
+  }
 
-        /* background-image: url("http://rail-logistic.dz/static/media/back12.07f2ecee.png"); */
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-blend-mode: screen;
-        /* fallback for old browsers */
-        font-family: "Roboto", sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        margin: 0;
-        padding: 0;
-    }
+  .error {
+    font-weight: bolder;
+    background-color: crimson;
+    display: inline;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+  }
 
-    .bg-image {
-        /* The image used */
-        background-image: url("{% static 'background.png' %}"); 
-        /* Add the blur effect */
-        width: calc(100% - 450px);
-        filter:blur(0px);
-        
-        /* Full height */
-        height: 100%;
+  .bg-text {
+    background-color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    height: 100%;
+  }
+  .parent-element-to-video {
+    overflow: hidden;
+}
+img {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+}
+body {
+  /* Location of the image */
+  background-image: url(static/background4.jpg);
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+}
+  .bg-image {
+    /* The image used */
+    background-image: url("{% static 'background.png' %}");
+    /* Add the blur effect */
+    width: calc(100% - 450px);
+    filter: blur(0px);
 
-        /* Center and scale the image nicely */
-        background-position: right;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /* Add some content at the bottom of the video/page */
+.viewport-header {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 155;
+}
+.login-form{
+    background: rgba(255, 255, 255, 0.0);
+    border-radius: 20px;
+    padding: 30px;
+    width: 300px;
 
-    .logo {
-        margin-bottom: 20px
-    }
+}
 
-    .error {
-        font-weight: bolder;
-        background-color: crimson;
-        display: inline;
-        color: white;
-        padding: 10px;
-        border-radius: 8px;
-
-    }
-
-    .bg-text {
-        background-color: white;
-        font-weight: bold;
-        position: absolute;
-        top: 0;
-        right: 0;
-        text-align: center;
-        height: 100%;
-    }
 </style>
-<div class="bg-image"></div>
-
-<div class="bg-text">
-
+<header class="viewport-header">
     <div class="form">
-        <div class="logo"><img src="{% static 'logo.png' %}" alt="logo" width="120px" height="120px"></div>
-
+        <!-- <div class="logo">
+          <img
+            src="{% static 'logo.png' %}"
+            alt="logo"
+            width="120px"
+            height="120px"
+          />
+        </div> -->
         <form class="login-form" method="post" action="/login">
-            <input type="text" placeholder="Nom d'utilisateur" name="username" />
-            <input type="password" placeholder="Mot de passe" name="password" />
-            
-            <button type="submit">connecter</button>
-            <p class="message"> Rail Logistic © SGME .</p>
+          <input type="text" placeholder="Nom d'utilisateur" name="username" />
+          <input type="password" placeholder="Mot de passe" name="password" />
+    
+          <button type="submit">connecter</button>
+          <p class="message">Rail Logistic © SGME .</p>
         </form>
         {% if message %}
         <div class="error">{{message}}</div>
         {% endif %}
-    </div>
+      </div>
+  </header>
+<div class="parent-element-to-video">
+    <!-- <video src="static/cover.mp4" alt="My image" autoplay loop> -->
 </div>
+  <!-- <div class="bg-image"></div>
+
+    
+<div class="bg-text">
+  <div class="form">
+    <div class="logo">
+      <img
+        src="{% static 'logo.png' %}"
+        alt="logo"
+        width="120px"
+        height="120px"
+      />
+    </div>
+    <form class="login-form" method="post" action="/login">
+      <input type="text" placeholder="Nom d'utilisateur" name="username" />
+      <input type="password" placeholder="Mot de passe" name="password" />
+
+      <button type="submit">connecter</button>
+      <p class="message">Rail Logistic © SGME .</p>
+    </form>
+    {% if message %}
+    <div class="error">{{message}}</div>
+    {% endif %}
+  </div>
+</div> -->
+</video>
