@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'report_builder',
     "authentication",
     'rest_framework',
-    'clients'
+    'clients',
+    'park',
 
 ]
 

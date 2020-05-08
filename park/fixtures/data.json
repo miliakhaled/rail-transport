@@ -1,0 +1,334 @@
+[
+  {
+    "model": "park.EngineCapacity",
+    "pk": 1,
+    "fields": {
+      "value": 1.5,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 2,
+    "fields": {
+      "value": 2.5,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 3,
+    "fields": {
+      "value": 3.5,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 4,
+    "fields": {
+      "value": 5,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 5,
+    "fields": {
+      "value": 7,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 6,
+    "fields": {
+      "value": 10,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 7,
+    "fields": {
+      "value": 20,
+      "unit": "T"
+    }
+  },
+
+  {
+    "model": "park.EngineCapacity",
+    "pk": 8,
+    "fields": {
+      "value": 40,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 9,
+    "fields": {
+      "value": 32,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 10,
+    "fields": {
+      "value": 54,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 11,
+    "fields": {
+      "value": 70,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 12,
+    "fields": {
+      "value": 120,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 13,
+    "fields": {
+      "value": 150,
+      "unit": "T"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 14,
+    "fields": {
+      "value": 18,
+      "unit": "M"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 15,
+    "fields": {
+      "value": 24,
+      "unit": "M"
+    }
+  },
+  {
+    "model": "park.EngineCapacity",
+    "pk": 16,
+    "fields": {
+      "value": 32,
+      "unit": "M"
+    }
+  },
+  {
+    "model": "park.EngineType",
+    "pk": 3,
+    "fields": {
+      "designation": "Camion"
+    }
+  },
+  {
+    "model": "park.EngineType",
+    "pk": 4,
+    "fields": {
+      "designation": "Camion Grue"
+    }
+  },
+  {
+    "model": "park.EngineType",
+    "pk": 2,
+    "fields": {
+      "designation": "Fourgon"
+    }
+  },
+  {
+    "model": "park.EngineType",
+    "pk": 1,
+    "fields": {
+      "designation": "Fourgonnette"
+    }
+  },
+
+  {
+    "model": "park.EngineType",
+    "pk": 5,
+    "fields": {
+      "designation": "Porte Engin"
+    }
+  },
+  {
+    "model": "park.EngineType",
+    "pk": 6,
+    "fields": {
+      "designation": "Camion Extensible"
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 1,
+    "fields": {
+      "engine_type": 1,
+      "capacity": null
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 2,
+    "fields": {
+      "engine_type": 2,
+      "capacity": 1
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 3,
+    "fields": {
+      "engine_type": 2,
+      "capacity": 2
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 4,
+    "fields": {
+      "engine_type": 3,
+      "capacity": 2
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 5,
+    "fields": {
+      "engine_type": 3,
+      "capacity": 3
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 6,
+    "fields": {
+      "engine_type": 3,
+      "capacity": 4
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 7,
+    "fields": {
+      "engine_type": 3,
+      "capacity": 5
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 8,
+    "fields": {
+      "engine_type": 3,
+      "capacity": 6
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 9,
+    "fields": {
+      "engine_type": 3,
+      "capacity": 7
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 10,
+    "fields": {
+      "engine_type": 3,
+      "capacity": 8
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 11,
+    "fields": {
+      "engine_type": 4,
+      "capacity": 6
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 12,
+    "fields": {
+      "engine_type": 4,
+      "capacity": 7
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 13,
+    "fields": {
+      "engine_type": 5,
+      "capacity": 9
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 14,
+    "fields": {
+      "engine_type": 5,
+      "capacity": 10
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 15,
+    "fields": {
+      "engine_type": 5,
+      "capacity": 11
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 16,
+    "fields": {
+      "engine_type": 5,
+      "capacity": 12
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 17,
+    "fields": {
+      "engine_type": 5,
+      "capacity": 13
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 18,
+    "fields": {
+      "engine_type": 6,
+      "capacity": 14
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 19,
+    "fields": {
+      "engine_type": 6,
+      "capacity": 15
+    }
+  },
+  {
+    "model": "park.EngineModel",
+    "pk": 19,
+    "fields": {
+      "engine_type": 6,
+      "capacity": 16
+    }
+  }
+]
