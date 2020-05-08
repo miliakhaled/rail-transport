@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'graphene_django_cud',
-
     'polymorphic',
     'django.contrib.humanize',
     'django.contrib.contenttypes',
@@ -48,7 +47,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'clients',
     'park',
-
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

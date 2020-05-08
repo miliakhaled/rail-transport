@@ -26,9 +26,10 @@ def createImports(app, models):
         imports = open(f"{app}/graphql.py", 'w+')
 
         # for Types
-        imports.writelines(["from raillogistic.graphenegraphene import CustomDjangoObjectType,CustomDjangoSerializerMutation, CustomConnection\n", "import graphene\n", "from graphene_django.filter import DjangoFilterConnectionField\n",
+        imports.writelines(["from raillogistic.graphene.graphene import CustomDjangoObjectType,CustomDjangoSerializerMutation, CustomConnection\n", "import graphene\n", "from graphene_django.filter import DjangoFilterConnectionField\n",
                             "from graphene.relay.node import Node\n"])
         imports.write("from . import models\n")
+        imports.write("from . import filters\n")
         imports.write("from graphene_django_extras import DjangoListObjectType,DjangoListObjectField, DjangoObjectField, DjangoFilterPaginateListField,  LimitOffsetGraphqlPagination\n")
         imports.write(
             "from raillogistic.graphene.CustomDjangoObjectListType import CustomDjangoListObjectType\n")
@@ -36,6 +37,19 @@ def createImports(app, models):
         imports.writelines(lines(2))
 
         imports.close()
+
+
+def createFilters(app, models):
+            # types.py
+    filters = open(f"{app}/filters.py", 'w+')
+    filters.write('from django_filters import FilterSet\n')
+    filters.write('from . import models\n')
+    for model in models:
+        filters.write(f"class {model}Filters(FilterSet):\n")
+        filters.write(f"\tclass Meta:\n")
+        filters.write(f"\t\tfields = '__all__'\n")
+        filters.write(f"\t\tmodel = models.{model} \n")
+    filters.close()
 
 
 def createTypes(app, models):
@@ -52,7 +66,8 @@ def createTypes(app, models):
         types.write(f"\tclass Meta:\n")
         types.write(f"\t\tname = '{model}Type'\n")
         types.write(f"\t\tmodel = models.{model} \n")
-        types.write("\t\tfilter_fields = '__all__'\n")
+        # types.write("\t\tfilter_fields = '__all__'\n")
+        types.write(f"\t\tfilterset_class = filters.{model}Filters\n")
         #types.write(f"\t\tinterfaces = (graphene.relay.Node,)\n")
         #types.write(f"\t\tconnection_class = CustomConnection\n")
         types.write("\n\n")
@@ -152,6 +167,7 @@ models = [node.name for node in ast.walk(p) if isinstance(node, ast.ClassDef)]
 models[:] = (value for value in models if value != 'Meta')
 createImports(app, models)
 createTypes(app, models)
+createFilters(app, models)
 createSerializers(app, models)
 createMutaions(app, models)
 createSchema(app, models)

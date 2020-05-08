@@ -6,18 +6,20 @@ from . import models
 from graphene_django_extras import DjangoListObjectField, DjangoObjectField,  DjangoFilterPaginateListField,  LimitOffsetGraphqlPagination
 from rest_framework import serializers
 from raillogistic.graphene.CustomDjangoObjectListType import CustomDjangoListObjectType
+from . import filters
 
 
 class ClientType(CustomDjangoObjectType):
     class Meta:
         name = 'ClientType'
         model = models.Client
-        filter_fields = {
-            'id': ("exact",),
-            'raison_social': ("exact", 'icontains'),
-            'code_client': ("exact", 'icontains'),
-            # 'barem': ("exact",),
-        }
+        filterset_class = filters.ClientFilters
+        # filter_fields = {
+        #     'id': ("exact",),
+        #     'raison_social': ("exact", 'icontains'),
+        #     'code_client': ("exact", 'icontains'),
+        #     # 'barem': ("exact",),
+        # }
 
 
 class ContactType(CustomDjangoObjectType):
@@ -45,13 +47,15 @@ class ClientListType(CustomDjangoListObjectType):
     class Meta:
         name = 'ClientListType'
         model = models.Client
-        filter_fields = {
-            'id': ("exact",),
-            'raison_social': ("exact", 'icontains'),
-            'code_client': ("exact", 'icontains'),
-            # 'barem': ("exact",),
+        filterset_class = filters.ClientFilters
 
-        }
+        # filter_fields = {
+        #     'id': ("exact",),
+        #     'raison_social': ("exact", 'icontains'),
+        #     'code_client': ("exact", 'icontains'),
+        #     # 'barem': ("exact",),
+
+        # }
         pagination = LimitOffsetGraphqlPagination()
 
 
@@ -132,7 +136,7 @@ class ContactMutation(CustomDjangoSerializerMutation):
 
 class ClientQuery(object):
     clients = DjangoFilterPaginateListField(
-        ClientType, pagination=LimitOffsetGraphqlPagination(ordering="raison_social"))
+        ClientType, pagination=LimitOffsetGraphqlPagination(ordering="raison_social"),)
     all_clients = DjangoListObjectField(ClientListType)
     client = DjangoObjectField(ClientType)
 

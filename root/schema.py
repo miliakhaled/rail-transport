@@ -6,6 +6,7 @@ import authentication.graphql
 import authentication.schema
 import clients.graphql as ClientGraph
 import clients.schema as ClientSchema
+import park.graphql as ParkGraph
 
 
 class Queries(
@@ -13,6 +14,11 @@ class Queries(
     authentication.schema.Query,
     ClientGraph.ClientQuery,
     ClientGraph.ContactQuery,
+    ParkGraph.EngineTypeQuery,
+    ParkGraph.EngineQuery,
+    ParkGraph.ChaufeurQuery,
+    ParkGraph.EngineModelQuery,
+    ParkGraph.EngineCapacityQuery,
     graphene.ObjectType,
 
 ):
@@ -24,7 +30,12 @@ class Mutations(
     authentication.schema.Mutations,
     ClientGraph.ClientMutations,
     ClientGraph.ContactMutations,
-    ClientSchema.Mutations
+    ClientSchema.Mutations,
+    ParkGraph.EngineTypeMutations,
+    ParkGraph.EngineMutations,
+    ParkGraph.ChaufeurMutations,
+    ParkGraph.EngineModelMutations,
+    ParkGraph.EngineCapacityMutations,
 ):
     pass
 
