@@ -27,6 +27,10 @@ class EngineCapacity(models.Model):
         ('M', 'M')
     ], max_length=5, verbose_name="Unité", null=False, default="T")
 
+    @property
+    def designation(self):
+        return f"{self.value}{self.unit}"
+
     def __str__(self):
         return f"{self.value}{self.unit}"
 
