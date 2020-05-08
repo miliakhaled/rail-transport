@@ -28,6 +28,7 @@ class EngineModelType(CustomDjangoObjectType):
         name = 'EngineModelType'
         model = models.EngineModel
         filterset_class = filters.EngineModelFilters
+    designation = graphene.String()
 
 
 class EngineType(CustomDjangoObjectType):
@@ -84,6 +85,7 @@ class ChaufeurListType(CustomDjangoListObjectType):
         pagination = LimitOffsetGraphqlPagination()
 
 
+
 class EngineTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.EngineType
@@ -114,6 +116,7 @@ class ChaufeurSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
 class EngineTypeMutation(CustomDjangoSerializerMutation):
     class Meta:
         serializer_class = EngineTypeSerializer
@@ -137,6 +140,7 @@ class EngineMutation(CustomDjangoSerializerMutation):
 class ChaufeurMutation(CustomDjangoSerializerMutation):
     class Meta:
         serializer_class = ChaufeurSerializer
+
 
 
 class EngineTypeQuery(object):
@@ -202,3 +206,4 @@ class ChaufeurMutations(graphene.AbstractType):
     create_chaufeur = ChaufeurMutation.CreateField()
     update_chaufeur = ChaufeurMutation.UpdateField()
     delete_chaufeur = ChaufeurMutation.DeleteField()
+
