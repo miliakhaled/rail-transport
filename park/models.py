@@ -43,6 +43,11 @@ class EngineModel(models.Model):
         'park.EngineType', on_delete=models.PROTECT, null=False, related_name="types")
     capacity = models.ForeignKey(
         'park.EngineCapacity', on_delete=models.PROTECT, null=True, related_name="capacities")
+    state = models.CharField(max_length=100, choices=[
+        ('service', 'En service'),
+        ('horsservice', 'Hors service'),
+    ],        default="service"
+    )
 
     @property
     def designation(self):
