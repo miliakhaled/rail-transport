@@ -63,10 +63,11 @@ GRAPHENE = {
 
 GRAPHENE_DJANGO_EXTRAS = {
     'DEFAULT_PAGINATION_CLASS': 'graphene_django_extras.paginations.LimitOffsetGraphqlPagination',
-    # 'DEFAULT_PAGE_SIZE': 10,
-    # 'MAX_PAGE_SIZE': 50,
+    'DEFAULT_PAGE_SIZE': 100,
+    'PAGE_SIZE':  100,
+    'MAX_PAGE_SIZE': 100,
     'CACHE_ACTIVE': True,
-    'CACHE_TIMEOUT': 300    # seconds
+    'CACHE_TIMEOUT': 300    # seconds,
 }
 
 

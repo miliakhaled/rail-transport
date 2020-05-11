@@ -22,14 +22,13 @@ class EngineCapacityType(CustomDjangoObjectType):
         model = models.EngineCapacity
         filterset_class = filters.EngineCapacityFilters
 
-    designation = graphene.String()
-
 
 class EngineModelType(CustomDjangoObjectType):
     class Meta:
         name = 'EngineModelType'
         model = models.EngineModel
         filterset_class = filters.EngineModelFilters
+
     designation = graphene.String()
 
 
@@ -51,7 +50,7 @@ class EngineTypeListType(CustomDjangoListObjectType):
     class Meta:
         name = 'EngineTypeListType'
         model = models.EngineType
-        filter_fields = '__all__'
+        filterset_class = filters.EngineTypeFilters
         pagination = LimitOffsetGraphqlPagination()
 
 
@@ -59,7 +58,7 @@ class EngineCapacityListType(CustomDjangoListObjectType):
     class Meta:
         name = 'EngineCapacityListType'
         model = models.EngineCapacity
-        filter_fields = '__all__'
+        filterset_class = filters.EngineCapacityFilters
         pagination = LimitOffsetGraphqlPagination()
 
 
@@ -67,7 +66,7 @@ class EngineModelListType(CustomDjangoListObjectType):
     class Meta:
         name = 'EngineModelListType'
         model = models.EngineModel
-        filter_fields = '__all__'
+        filterset_class = filters.EngineModelFilters
         pagination = LimitOffsetGraphqlPagination()
 
 
@@ -75,7 +74,7 @@ class EngineListType(CustomDjangoListObjectType):
     class Meta:
         name = 'EngineListType'
         model = models.Engine
-        filter_fields = '__all__'
+        filterset_class = filters.EngineFilters
         pagination = LimitOffsetGraphqlPagination()
 
 
@@ -83,7 +82,7 @@ class ChaufeurListType(CustomDjangoListObjectType):
     class Meta:
         name = 'ChaufeurListType'
         model = models.Chaufeur
-        filter_fields = '__all__'
+        filterset_class = filters.ChaufeurFilters
         pagination = LimitOffsetGraphqlPagination()
 
 

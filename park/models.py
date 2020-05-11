@@ -51,7 +51,7 @@ class EngineModel(models.Model):
 
     @property
     def designation(self):
-        return f"{self.engine_type} {self.capacity}"
+        return f"{self.engine_type} {self.capacity or ''}"
 
     def __str__(self):
         return f"{self.engine_type} {self.capacity}"

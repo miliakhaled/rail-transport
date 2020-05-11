@@ -35,6 +35,7 @@ urlpatterns = [
     url('^graphiql', csrf_exempt(GraphQLView.as_view(
         graphiql=True, schema=schema))),
     path('gql', csrf_exempt(GraphQLView.as_view(batch=True))),
+    path('export/xls', views.export),
     url(r'^(?:.*)/?$', views.index),
     # path('', views.index),
 ]

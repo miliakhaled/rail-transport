@@ -77,7 +77,7 @@ def createTypes(app, models):
         types.write(f"\tclass Meta:\n")
         types.write(f"\t\tname = '{model}ListType'\n")
         types.write(f"\t\tmodel = models.{model} \n")
-        types.write("\t\tfilter_fields = '__all__'\n")
+        types.write(f"\t\tfilterset_class = filters.{model}Filters\n")
         types.write("\t\tpagination = LimitOffsetGraphqlPagination()\n")
         #types.write(f"\t\tinterfaces = (graphene.relay.Node,)\n")
         #types.write(f"\t\tconnection_class = CustomConnection\n")

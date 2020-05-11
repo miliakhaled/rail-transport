@@ -20,7 +20,7 @@ class Client(models.Model):
     #   null=True, blank=True, related_name="clients")
 
     def __str__(self):
-        return f'{self.id}:{self.raison_social}'
+        return f'{self.raison_social}'
 
 
 class Contact(models.Model):
@@ -34,7 +34,7 @@ class Contact(models.Model):
         Client, on_delete=models.CASCADE, null=False, related_name='contacts')
 
     def __str__(self):
-        return f'{self.id}:{self.nom} {self.prenom}'
+        return f'{self.nom} {self.prenom}'
 
 
 def props(cls):
