@@ -8,7 +8,7 @@ cffi==1.13.2
 cssselect2==0.2.2
 defusedxml==0.6.0
 diff-match-patch==20181111
-Django==3.0.1
+Django==3.0.7
 django-adminlte3==0.1.2
 django-codemirror2==0.2
 django-cors-headers==3.2.0
