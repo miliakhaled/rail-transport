@@ -3,7 +3,7 @@ asgiref==3.2.3
 astroid==2.3.3
 autopep8==1.4.4
 cairocffi==1.1.0
-CairoSVG==2.4.2
+CairoSVG==2.5.1
 cffi==1.13.2
 cssselect2==0.2.2
 defusedxml==0.6.0
